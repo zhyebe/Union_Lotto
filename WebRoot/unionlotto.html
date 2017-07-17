@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>双色球</title>
+
+<meta name="keywords" content="keyword1,keyword2,keyword3">
+<meta name="description" content="this is my page">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+
+<link rel="stylesheet" type="text/css" href="js/layer/skin/layer.css">
+<script type="text/javascript" src="js/jquery-2.1.4.js"></script>
+<script type="text/javascript" src="js/union.js"></script>
+<script type="text/javascript" src="js/layer/layer.js"></script>
+
+<style type="text/css">
+	.unionlotto{text-align:center;}
+	.unionlotto .all_union .resultTable{
+		border:1px solid #fff;
+		background:#d5d5d5;
+		margin:0 auto;
+		padding:0;
+		text-align:center;
+		width:75%;
+	
+	}
+	body{
+		background: #30C0AB;
+	}
+	.unionlotto .all_union .resultTable thead th{
+		margin:0;
+		border:1px solid #fff;
+		padding:7px 0 7px 0;
+		height:20px;
+		font-size:18px;
+		width:5%;
+		color:#000;
+	}
+	.unionlotto .all_union .resultTable tbody td{
+		margin:0;
+		border:1px solid #fff;
+		padding:5px 0 5px 0;
+		height:20px;
+		font-size:20px;
+		width:5%;
+		color:#009fcc;
+	}
+	#redball li{
+		background: url("images/index_optimize.png") no-repeat;
+		background-position:-298px -350px;
+		width:48px;
+		height:43px;
+		line-height:2;
+	}
+	#blueball li{
+		background: url("images/index_optimize.png") no-repeat;
+		background-position:-297px -300px;
+		width:49px;
+		height:43px;
+		line-height:2;
+	}
+</style>
+</head>
+
+<body>
+	
+	<div class="unionlotto">
+		<div id="can"></div>
+		<h1>双色球选择器</h1>
+		<div class="add_union" style="font-size:20px;">
+			<h2>添加上一期开奖结果</h2>
+			<span>第</span><input  placeholder="2015100" style="text-align:center;background:#ccc;margin:6px;width:80px;height:27px;font-size:20px;" type="text" id="union_lotto_id"><span style="margin-right:18px;">期</span>
+			<span>红球:</span><input  style="background:#ccc;width:170px;text-align:center;margin-right:10px;height:27px;font-size:20px;" type="text" id="red" placeholder="01,02,03,04,05,06"> 
+			<span style="margin-left:10px;">蓝球:</span><input style="background:#ccc;width:50px;text-align:center;height:27px;font-size:20px;" type="text" id="blue" placeholder="08"> 
+			<input style="margin:10px;height:32px;font-size:18px;font-weight:600;" type="button" id="get_new_data" value="获取最新数据">
+			<input style="height:32px;font-size:18px;font-weight:600;" type="button" class="add_btn" id="add_btn"
+				value="添加">
+		</div>
+		<div class="random_union" style="height:150px;">
+			<input style="height:32px;font-size:18px;font-weight:600;" style="margin-top:10px;" type="button" class="auto_btn" id="auto_btn" value="随机选号">
+			<p style="font-size:20px;">
+				红球：<span id="redball" style="color:#fff;width:400px;"></span> &nbsp;&nbsp;&nbsp;&nbsp; 蓝球：<span id="blueball" style="color:#fff;width:100px;"></span>
+			</p>
+		</div>
+		<div class="all_union">
+			<div style="height:640px;">
+			<table class="resultTable">
+				<thead>
+					<th>期数
+					</th>
+					<th>红球
+					</th>
+					<th>蓝球
+					</th>
+				</thead>
+				<tbody id="all_td_union">
+				</tbody>
+			</table>
+			</div>
+			<div id="page_msg" style="font-size:20px;display:none;margin:20px 0 200px 0;">
+				<input style="margin:10px;height:32px;font-size:18px;font-weight:600;" id="before_page" type="button" value="上一页">
+				第<span style="font-size:20px;" id="page_num"></span>页
+				<input style="margin:10px;height:32px;font-size:18px;font-weight:600;" id="next_page" type="button" value="下一页">
+				共<span style="font-size:20px;" id="page_total"></span>页
+			</div>
+		</div>
+	</div>
+</body>
+</html>
